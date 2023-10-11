@@ -1,0 +1,1 @@
+export DISCOVER_ECOMMERCE_DB_DSN='postgres://discover_ecommerce:pa55word@localhost/discover_ecommerce?sslmode=disable'

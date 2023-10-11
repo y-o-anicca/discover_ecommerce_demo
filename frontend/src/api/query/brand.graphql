@@ -1,0 +1,25 @@
+query GetBrands($input: BrandsInput!) {
+  brands(input: $input) {
+    id
+    name
+    products {
+      id
+      name
+    }
+    category
+    location
+  }
+}
+
+query GetBrandsByQuery($input: BrandsByQueryInput!) {
+  brandsByQuery(input: $input) {
+    id
+    name
+    products {
+      id
+      name
+    }
+    category
+    location
+  }
+}

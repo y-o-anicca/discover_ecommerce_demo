@@ -1,0 +1,46 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Brand {
+  id: ID!
+  name: String!
+  products: [Product!]!
+  category: String!
+  location: String!
+}
+
+type Product {
+  id: ID!
+  name: String!
+}
+
+enum CategoryKey {
+  COFFEE
+  FOOD
+  TOYS
+  APPLIANCES
+  FURNITURE
+}
+
+enum LocationKey {
+  LOSANGELES
+  NEWYORK
+  SEATTLE
+  DALLAS
+  MIAMI
+}
+
+input BrandsInput {
+  category: CategoryKey
+  location: LocationKey
+}
+
+input BrandsByQueryInput {
+  query: String!
+}
+
+type Query {
+  brands(input: BrandsInput!): [Brand!]!
+  brandsByQuery(input: BrandsByQueryInput!): [Brand!]!
+}
