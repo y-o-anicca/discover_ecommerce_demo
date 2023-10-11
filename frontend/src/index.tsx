@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 
 console.log(process.env)
 const client = createClient({
-  url: `http://${process.env.REACT_APP_API_SERVER_HOST}:${process.env.REACT_APP_API_SERVER_PORT}/query`,
+  url: `${process.env.REACT_APP_API_SERVER_HTTP_PROTOCOL}://${process.env.REACT_APP_API_SERVER_HOST}:${process.env.REACT_APP_API_SERVER_PORT}/query`,
   exchanges: [cacheExchange, fetchExchange],
 });
 
