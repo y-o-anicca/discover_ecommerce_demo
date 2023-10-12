@@ -14,7 +14,6 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 
-console.log(process.env)
 const client = createClient({
   url: `${process.env.REACT_APP_API_SERVER_URL}`,
   exchanges: [cacheExchange, fetchExchange],
