@@ -2,7 +2,6 @@ package usecase
 
 import (
 	"context"
-	"fmt"
 	"regexp"
 
 	"discover_ecommerce.yukiya.net/internal/domain/model"
@@ -34,9 +33,10 @@ func (u *usecase) GetBrandsByQuery(ctx context.Context, input model.BrandsByQuer
 	if locationMatch != "" {
 		locationKey := model.LocationMap[locationMatch]
 		brandsInput.Location = &locationKey
+	}
 
-		fmt.Println(locationMatch)
-		fmt.Println(&locationKey)
+	if searchText != "" && brandsInput.Category == nil && brandsInput.Location == nil {
+		return []*model.Brand{}, nil
 	}
 
 	brands, err := u.repository.GetBrands(ctx, brandsInput)
